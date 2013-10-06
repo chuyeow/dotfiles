@@ -98,6 +98,9 @@ install_dotfiles () {
 }
 
 install_dotfiles
+if [ ! -d ~/.oh-my-zsh ]; then
+  $DOTFILES_ROOT/script/setup-oh-my-zsh
+fi
 
 echo ''
 echo '  All installed!'

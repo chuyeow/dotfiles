@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# Sets up up oh-my-zsh https://github.com/robbyrussell/oh-my-zsh.
+git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
+
+# Alternatively, fallback to wget/curl https://github.com/robbyrussell/oh-my-zsh/tarball/master if git is not installed.
