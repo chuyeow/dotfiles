@@ -5,6 +5,7 @@ My dotfiles, inspired by [holman/dotfiles](https://github.com/holman/dotfiles).
 ## Installation
 
 ```
+git clone git@github.com:chuyeow/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
