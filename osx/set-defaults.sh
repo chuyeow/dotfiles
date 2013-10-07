@@ -491,8 +491,8 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Use my own theme by default in Terminal.app
 open "$HOME/.dotfiles/osx/chuyeow.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
-defaults write com.apple.terminal "Default Window Settings" -string "Mathias"
-defaults write com.apple.terminal "Startup Window Settings" -string "Mathias"
+defaults write com.apple.terminal "Default Window Settings" -string "chuyeow"
+defaults write com.apple.terminal "Startup Window Settings" -string "chuyeow"
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
