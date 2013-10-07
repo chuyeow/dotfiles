@@ -489,7 +489,7 @@ sudo mdutil -E /
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use my own theme by default in Terminal.app
-open "$HOME/osx/chuyeow.terminal"
+open "$HOME/.dotfiles/osx/chuyeow.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Mathias"
 defaults write com.apple.terminal "Startup Window Settings" -string "Mathias"
