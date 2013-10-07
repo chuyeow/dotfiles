@@ -1,5 +1,9 @@
 set -g default-terminal "screen-256color"
 
+# Enable pbcopy/pbpaste in tmux.
+# Requires `brew install reattach-to-user-namespace`.
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
 set -sg escape-time 1
 set-option -g repeat-time 200
 set -g status-utf8 on
