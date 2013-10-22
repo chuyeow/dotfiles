@@ -36,3 +36,7 @@ Set up OS X the way I like it:
 ```
 ./osx/set-defaults.sh
 ```
+
+## TODO
+
+* Use different files depending on OS (e.g. `tmux.conf` for Mac OX S uses `reattach-to-user-name`).
