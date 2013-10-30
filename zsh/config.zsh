@@ -1,7 +1,7 @@
 # Configs for zsh.
 
 # Disable autocorrect.
-unsetopt correct_all
+DISABLE_CORRECTION="true"
 
 # Configure history.
 HISTFILE=~/.zsh_history
