@@ -13,4 +13,4 @@
   excludesfile = ~/.gitignore
   editor = vim
 [push]
-  default = simple
+  default = matching
