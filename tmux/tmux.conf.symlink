@@ -39,4 +39,4 @@ setw -g mode-keys vi
 bind-key -t vi-copy v begin-selection
 
 # Add Powerline.
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
+source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
