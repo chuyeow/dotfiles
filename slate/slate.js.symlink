@@ -1,0 +1,22 @@
+// See https://github.com/jigish/slate.
+
+S.config('defaultToCurrentScreen', true);
+S.config('nudgePercentOf', 'screenSize');
+S.config('resizePercentOf', 'screenSize');
+
+S.bindAll({
+  'a:ctrl;shift': S.operation('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'd:ctrl;shift': S.operation('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'f:ctrl;alt;cmd': S.operation('move', { 'x': 'screenOriginX', 'y': 'screenOriginY', 'width': 'screenSizeX', 'height': 'screenSizeY' }),
+  '1:ctrl;shift': S.operation('focus', { 'app': 'Google Chrome' }),
+  '2:ctrl;shift': S.operation('focus', { 'app': 'Terminal' }),
+
+  'right:ctrl;alt;cmd': S.op('resize', { 'width': '+10%', 'height': '+0' }),
+  'left:ctrl;alt;cmd': S.op('resize', { 'width': '-10%', 'height': '+0' }),
+  'up:ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '-10%' }),
+  'down:ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '+10%' }),
+  'right:shift;ctrl;alt;cmd': S.op('resize', { 'width': '-10%', 'height': '+0', 'anchor': 'bottom-right' }),
+  'left:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+10%', 'height': '+0', 'anchor': 'bottom-right' }),
+  'up:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '+10%', 'anchor': 'bottom-right' }),
+  'down:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '-10%', 'anchor': 'bottom-right' }),
+});
