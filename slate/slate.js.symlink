@@ -24,6 +24,11 @@ S.bindAll({
   'up:ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '-5%' }),
   'down:ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+5%' }),
 
+  'right:shift;ctrl;alt': S.op('nudge', { 'x': '+2', 'y': '+0' }),
+  'left:shift;ctrl;alt': S.op('nudge', { 'x': '-2', 'y': '+0' }),
+  'up:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '-2' }),
+  'down:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+2' }),
+
   '1:ctrl;shift': S.operation('focus', { 'app': 'Google Chrome' }),
   '2:ctrl;shift': S.operation('focus', { 'app': 'Terminal' }),
 });
