@@ -23,10 +23,10 @@ set-window-option -g window-status-current-bg red
 # Highlight active pane.
 set-option -g pane-active-border-fg red
 
-# Remap prefix to Control + z.
-set -g prefix C-z
+# Remap prefix to Control + a.
+set -g prefix C-a
 unbind C-b
-bind C-z send-prefix
+bind C-a send-prefix
 
 unbind %
 bind | split-window -h
