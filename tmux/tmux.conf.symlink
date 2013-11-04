@@ -32,6 +32,18 @@ unbind %
 bind | split-window -h
 bind - split-window -v
 
+# Move around panes with hjkl.
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Resize panes.
+bind H resize-pane -L 10
+bind L resize-pane -R 10
+bind K resize-pane -D 5
+bind J resize-pane -U 5
+
 # Number windows and panes from 1 instead of 0.
 set -g base-index 1
 set-window-option -g pane-base-index 1
