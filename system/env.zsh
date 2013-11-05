@@ -5,4 +5,5 @@ export GREP_OPTIONS='--color=auto'
 # Nitrous.IO VM.
 export DEV_COOKBOOK_VM_CPUS=4
 export DEV_COOKBOOK_VM_MEM=3072
+export DEV_COOKBOOK_WORKSPACE=/Data/working_copies/nitrous-workspace
 
