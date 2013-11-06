@@ -24,10 +24,11 @@ set -g status-fg white
 set -g status-left '#[fg=green]#'
 
 # Highlight active window.
-set-window-option -g window-status-current-bg red
+set-window-option -g window-status-current-bg blue
 
 # Highlight active pane.
-set-option -g pane-active-border-fg red
+set-option -g pane-active-border-fg colour106
+set-option -g pane-border-fg colour234
 
 # Remap prefix to Control + a.
 set -g prefix C-a
