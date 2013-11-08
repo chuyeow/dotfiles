@@ -1,7 +1,7 @@
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias vi='vim'
-alias tmux='tmux -u'
+alias tmux='tmux -u -2'
 alias ll='ls -alh'
 alias ls='ls -FG'
 alias fdns='dscacheutil -flushcache'
