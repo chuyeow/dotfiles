@@ -8,7 +8,10 @@ S.bindAll({
   'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:3*screenSizeX/4' }),
   'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:3*screenSizeX/4' }),
 
-  'q:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
+  'q:ctrl;shift': S.op('corner', { 'direction': 'top-left', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
+  'e:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
+  'z:ctrl;shift': S.op('corner', { 'direction': 'bottom-left', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
+  'c:ctrl;shift': S.op('corner', { 'direction': 'bottom-right', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
 
   'f:ctrl;alt;cmd': S.op('move', { 'x': 'screenOriginX', 'y': 'screenOriginY', 'width': 'screenSizeX', 'height': 'screenSizeY' }),
 
