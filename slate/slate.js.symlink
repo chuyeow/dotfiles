@@ -5,10 +5,12 @@ S.config('nudgePercentOf', 'screenSize');
 S.config('resizePercentOf', 'screenSize');
 
 S.bindAll({
-  'a:ctrl;shift': S.operation('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
-  'd:ctrl;shift': S.operation('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:3*screenSizeX/4' }),
+  'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:3*screenSizeX/4' }),
 
-  'f:ctrl;alt;cmd': S.operation('move', { 'x': 'screenOriginX', 'y': 'screenOriginY', 'width': 'screenSizeX', 'height': 'screenSizeY' }),
+  'q:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
+
+  'f:ctrl;alt;cmd': S.op('move', { 'x': 'screenOriginX', 'y': 'screenOriginY', 'width': 'screenSizeX', 'height': 'screenSizeY' }),
 
   'right:ctrl;alt;cmd': S.op('resize', { 'width': '+10%', 'height': '+0' }),
   'left:ctrl;alt;cmd': S.op('resize', { 'width': '-10%', 'height': '+0' }),
