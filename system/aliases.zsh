@@ -4,6 +4,7 @@ alias vi='vim'
 alias tmux='tmux -u -2'
 alias ll='ls -alh'
 alias ls='ls -FG'
+alias be='bundle exec'
 alias fdns='dscacheutil -flushcache'
 alias ip='curl http://wtfismyip.com/json'
 
