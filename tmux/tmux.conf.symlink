@@ -24,10 +24,6 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 
-unbind %
-bind | split-window -h
-bind - split-window -v
-
 # Move around panes with hjkl.
 bind h select-pane -L
 bind j select-pane -D
@@ -40,9 +36,16 @@ bind L resize-pane -R 10
 bind K resize-pane -D 5
 bind J resize-pane -U 5
 
+unbind %
+bind | split-window -h
+bind - split-window -v
+
 # Number windows and panes from 1 instead of 0.
 set -g base-index 1
 set-window-option -g pane-base-index 1
+
+# Move to next window with Tab.
+bind Tab next-window
 
 # Use Vim keybindings in copy mode.
 setw -g mode-keys vi
