@@ -50,6 +50,7 @@ bind L resize-pane -R 10
 bind K resize-pane -D 5
 bind J resize-pane -U 5
 
+# Split windows.
 unbind %
 bind | split-window -h
 bind - split-window -v
@@ -60,6 +61,9 @@ set-window-option -g pane-base-index 1
 
 # Move to next window with Tab.
 bind Tab next-window
+
+# Pane manipulation.
+bind C-w kill-pane
 
 # Use Vim keybindings in copy mode.
 setw -g mode-keys vi
