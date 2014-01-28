@@ -22,10 +22,10 @@ set-window-option -g window-status-current-bg red
 # Highlight active pane.
 set-option -g pane-active-border-fg red
 
-# Remap prefix to Control + a.
-set -g prefix C-a
+# Remap prefix to `.
 unbind C-b
-bind C-a send-prefix
+set -g prefix `
+bind-key ` send-prefix
 
 # Move around panes with hjkl.
 bind h select-pane -L
