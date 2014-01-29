@@ -1,2 +1,2 @@
-export GOPATH=/Data/working_copies/go-workspace
+export GOPATH=~/gocode
 export PATH=$PATH:$GOPATH/bin
