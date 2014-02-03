@@ -5,5 +5,5 @@ alias gp='git push'
 alias gb='git branch'
 alias gcm='git checkout master'
 alias gco='git checkout'
-alias gst='git status'
+alias gst='git status -sb'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
