@@ -7,4 +7,5 @@ export DEV_COOKBOOK_VM_CPUS=2
 export DEV_COOKBOOK_VM_MEM=3072
 export DEV_COOKBOOK_SYNC_WORKSPACE=1
 export DEV_COOKBOOK_WORKSPACE=/Data/working_copies/nitrous-workspace
+export BOMBAY_INTERFACE=33.33.33.12
 
