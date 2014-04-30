@@ -5,8 +5,10 @@ S.config('nudgePercentOf', 'screenSize');
 S.config('resizePercentOf', 'screenSize');
 
 S.bindAll({
-  'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:3*screenSizeX/4' }),
-  'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:3*screenSizeX/4' }),
+  'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'a:ctrl;alt;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/3' }),
+  'd:ctrl;alt;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:screenSizeX/3' }),
 
   'q:ctrl;shift': S.op('corner', { 'direction': 'top-left', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
   'e:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/4', 'height': 'screenSizeY/4' }),
