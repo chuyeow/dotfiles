@@ -60,5 +60,3 @@ setw -g mode-keys vi
 # Setup 'v' to begin selection as in Vim.
 bind-key -t vi-copy v begin-selection
 
-# Add Powerline.
-source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
