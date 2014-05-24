@@ -16,6 +16,10 @@ set -g status-bg black
 set -g status-fg white
 set -g status-left '#[fg=green]#'
 
+# When there a multiple clients, a window is only constrained in size if a
+# smaller client is actively looking at it.
+setw -g aggressive-resize on
+
 # Highlight active window.
 set-window-option -g window-status-current-bg red
 
