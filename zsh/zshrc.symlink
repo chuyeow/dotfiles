@@ -69,3 +69,6 @@ source $ZSH/oh-my-zsh.sh
 c() { cd $PROJECTS/$1; }
 _c() { _files -W $PROJECTS -/; }
 compdef _c c
+
+# autoenv.
+[ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh ]
