@@ -3,8 +3,13 @@
 S.config('defaultToCurrentScreen', true);
 S.config('nudgePercentOf', 'screenSize');
 S.config('resizePercentOf', 'screenSize');
+S.config('windowHintsShowIcons', true);
+S.config('windowHintsIgnoreHiddenWindows', false);
+S.config('windowHintsSpread', true);
 
 S.bindAll({
+  'e:cmd;shift': S.op('hint'),
+
   'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
   'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
   'a:ctrl;alt;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/3' }),
@@ -37,5 +42,6 @@ S.bindAll({
   'down:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+2' }),
 
   '1:ctrl;shift': S.operation('focus', { 'app': 'Google Chrome' }),
-  '2:ctrl;shift': S.operation('focus', { 'app': 'Terminal' }),
+  '2:ctrl;shift': S.operation('focus', { 'app': 'iTerm' }),
 });
+
