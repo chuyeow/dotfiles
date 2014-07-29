@@ -1,6 +1,6 @@
 alias gca='git commit -a'
 alias gcv='git commit -v'
-alias gpr='git pull --rebase'
+alias gpr='git pull --rebase --prune'
 alias gp='git push'
 alias gb='git branch'
 alias gcm='git checkout master'
