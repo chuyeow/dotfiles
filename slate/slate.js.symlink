@@ -10,6 +10,9 @@ S.config('windowHintsSpread', true);
 S.bindAll({
   'e:cmd;shift': S.op('hint'),
 
+  '1:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/2' }),
+  '2:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:screenSizeX/2' }),
+
   'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
   'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
   'a:ctrl;alt;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/3' }),
@@ -40,8 +43,5 @@ S.bindAll({
   'left:shift;ctrl;alt': S.op('nudge', { 'x': '-2', 'y': '+0' }),
   'up:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '-2' }),
   'down:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+2' }),
-
-  '1:ctrl;shift': S.operation('focus', { 'app': 'Google Chrome' }),
-  '2:ctrl;shift': S.operation('focus', { 'app': 'iTerm' }),
 });
 
