@@ -3,7 +3,6 @@
 S.config('defaultToCurrentScreen', true);
 S.config('nudgePercentOf', 'screenSize');
 S.config('resizePercentOf', 'screenSize');
-S.config('windowHintsShowIcons', true);
 S.config('windowHintsIgnoreHiddenWindows', false);
 S.config('windowHintsSpread', true);
 
@@ -17,6 +16,8 @@ S.bindAll({
   'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
   'a:ctrl;alt;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/3' }),
   'd:ctrl;alt;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:screenSizeX/3' }),
+
+  's:ctrl;shift': S.op('move', { 'x': 'screenOriginX+screenSizeX/4', 'y': 'screenOriginY', 'width': 'screenSizeX/2', 'height': 'screenSizeY' }),
 
   'q:ctrl;shift': S.op('corner', { 'direction': 'top-left', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
   'e:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
