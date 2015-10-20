@@ -4,11 +4,7 @@ set -g default-terminal "screen-256color"
 # Requires `brew install reattach-to-user-namespace`.
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 
-# Mouse mode.
-set -g mode-mouse on
-set -g mouse-resize-pane on
-set -g mouse-select-pane on
-set -g mouse-select-window on
+set -g mouse on
 
 set -sg escape-time 1
 set-option -g repeat-time 200
