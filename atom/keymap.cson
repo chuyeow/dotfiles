@@ -2,3 +2,4 @@
 # Use the 'Key Binding Resolver' to see what mappings are currently in place.
 '.platform-darwin atom-text-editor':
   'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
+  'alt-backspace': 'editor:delete-to-previous-word-boundary'
