@@ -8,9 +8,6 @@ set -g mouse on
 
 set -sg escape-time 1
 set-option -g repeat-time 200
-set -g status-utf8 on
-setw -g utf8 on
-set-window-option -g utf8 on
 setw -g monitor-activity on
 set -g visual-activity on
 
