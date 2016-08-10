@@ -3,3 +3,8 @@
 '.platform-darwin atom-text-editor':
   'ctrl-backspace': 'editor:delete-to-beginning-of-subword'
   'alt-backspace': 'editor:delete-to-previous-word-boundary'
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+  'ctrl-shift-"': 'toggle-quotes:toggle'
