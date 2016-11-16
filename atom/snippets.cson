@@ -37,3 +37,8 @@
   'it':
     'prefix': 'it'
     'body': 'It("$1", func() {\n\t$2\n})'
+
+'.source.js':
+  'ES6 function':
+    'prefix': 'fn'
+    'body': '($1) => {\n\t$2\n}'
