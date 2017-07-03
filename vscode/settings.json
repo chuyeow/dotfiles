@@ -26,5 +26,6 @@
     "window.title": "${dirty} ${activeEditorShort}${separator}${rootName}",
     "terminal.external.osxExec": "iTerm.app",
     "telemetry.enableCrashReporter": false,
-    "git.countBadge": "off"
+    "git.countBadge": "off",
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
