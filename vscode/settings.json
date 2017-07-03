@@ -1,0 +1,30 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "go.coverOnSave": true,
+    "go.testOnSave": true,
+    "go.testTimeout": "5s",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.roundedSelection": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": false
+    },
+    "editor.folding": false,
+    "window.reopenFolders": "all",
+    "window.title": "${dirty} ${activeEditorShort}${separator}${rootName}",
+    "terminal.external.osxExec": "iTerm.app",
+    "telemetry.enableCrashReporter": false,
+    "git.countBadge": "off"
+}
