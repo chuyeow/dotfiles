@@ -11,3 +11,5 @@ alias gcm 'git checkout master'
 alias gco 'git checkout'
 alias gst 'git status --branch'
 alias gl "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+
+alias k kubectl
