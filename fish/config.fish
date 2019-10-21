@@ -2,6 +2,8 @@ set -x GOPATH ~/go
 
 set -x PATH ~/bin $GOPATH/bin /usr/local/go/bin $PATH
 
+set -x LC_ALL en_US.UTF-8
+
 alias gca 'git commit -a'
 alias gcv 'git commit -v'
 alias gpr 'git pull --rebase'
