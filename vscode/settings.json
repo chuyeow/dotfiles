@@ -1,31 +1,81 @@
 {
-    "workbench.colorTheme": "Atom One Dark",
-    "window.zoomLevel": 1,
+    "breadcrumbs.enabled": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.detectIndentation": true,
+    "editor.folding": false,
+    "editor.fontFamily": "'Dank Mono', 'Fira Code', 'Cascadia Code', Hack, Inconsolata, 'Victor Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "go.coverOnSave": true,
-    "go.testOnSave": true,
-    "go.testTimeout": "5s",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 14,
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "editor.roundedSelection": true,
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,
         "strings": false
     },
-    "editor.folding": false,
-    "window.reopenFolders": "all",
-    "window.title": "${dirty} ${activeEditorShort}${separator}${rootName}",
-    "terminal.external.osxExec": "iTerm.app",
-    "telemetry.enableCrashReporter": false,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.roundedSelection": true,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.suggest.localityBonus": true,
+    "editor.tabSize": 2,
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.Jenkinsfile": "groovy",
+        "*.Makefile": "makefile"
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "git.countBadge": "off",
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "gitlink.defaultRemote": "https://code.in.spdigital.sg/",
+    "go.goroot": "/usr/local/go",
+    "go.coverOnSave": true,
+    "go.coverageOptions": "showUncoveredCodeOnly",
+    "go.coverOnSingleTest": true,
+    "go.testOnSave": true,
+    "go.testTimeout": "5s",
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": true
+    },
+    "go.formatTool": "goimports",
+    "go.languageServerFlags": [
+        "-rpc.trace", // for more detailed debug logging
+    ],
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        "editor.codeActionsOnSaveTimeout": 3000
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // ----- Experimental settings -----
+        "completeUnimported": true, // autocomplete unimported packages
+        // "watchChangedFiles": true, // watch file changes outside of the editor
+        "deepCompletion": true,
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "search.showLineNumbers": true,
+    "standard.autoFixOnSave": true,
+    "telemetry.enableCrashReporter": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "todohighlight.isEnable": true,
+    "todohighlight.keywordsPattern": "TODO",
+    "window.restoreWindows": "all",
+    "window.title": "${dirty} ${activeEditorLong}${separator}${rootName}",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Morass Contrast (rainglow)",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.labelFormat": "medium",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.startupEditor": "newUntitledFile",
 }
