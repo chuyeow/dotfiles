@@ -1,21 +1,25 @@
 [user]
-  email = chuyeow@gmail.com
-  name = Cheah Chu Yeow
+	email = chuyeow@gmail.com
+	name = Cheah Chu Yeow
 [alias]
-  co = checkout
-  count = !git shortlog -sn
-  ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-  lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	co = checkout
+	count = !git shortlog -sn
+	ls = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	overview = !git log --all --no-merges
+	recap = !git log --all --no-merges --author=cheahchuyeow@spgroup.com.sg --author=cheahchuyeow@singaporepower.com.sg
+	today = !git log --all --no-merges --author=cheahchuyeow@spgroup.com.sg --author=cheahchuyeow@singaporepower.com.sg --since=00:00:00
+	graph = !git log --graph --all --decorate --stat --date=iso
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 [core]
-  excludesfile = ~/.gitignore
-  editor = vim
+	excludesfile = ~/.gitignore
+	editor = vim
 [push]
-  default = simple
+	default = simple
 [rerere]
 	enabled = true
