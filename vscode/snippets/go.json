@@ -13,6 +13,12 @@
 	// 	"description": "Log output to console"
 	// }
 
+	"time value": {
+		"prefix": "time",
+		"body": [
+			"time.Date(${1:1979}, ${2:11}, ${3:10}, 0, 0, 0, 0, time.UTC)"
+		]
+	},
 	"if want, got": {
 		"prefix": "ifwg",
 		"body": [
@@ -21,7 +27,6 @@
 			"}"
 		]
 	},
-
 	"given, when, then": {
 		"prefix": "given",
 		"body": [
@@ -32,12 +37,11 @@
 			"// Then"
 		]
 	},
-
 	"table tests": {
 		"prefix": "tt",
 		"body": [
 			"// Given",
-			"var testCases = []struct {",
+			"testCases := []struct {",
 			"\tname string",
 			"\t${1:expected} ${2:type}",
 			"}{",
