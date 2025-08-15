@@ -1,0 +1,26 @@
+# ~/.bash_profile
+
+# Source .bashrc if it exists
+if [[ -f ~/.bashrc ]]; then
+    source ~/.bashrc
+fi
+
+# macOS specific PATH additions (if not already in .bashrc)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Homebrew
+    if [[ -d /opt/homebrew/bin ]] && [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
+
+    # Homebrew sbin
+    if [[ -d /opt/homebrew/sbin ]] && [[ ":$PATH:" != *":/opt/homebrew/sbin:"* ]]; then
+        export PATH="/opt/homebrew/sbin:$PATH"
+    fi
+fi
+
+# Terminal settings
+export TERM=xterm-256color
+
+# Editor preferences
+export EDITOR=vim
+export VISUAL=vim
