@@ -25,6 +25,7 @@ alias cc='claude'
 alias ccres='claude --resume'
 alias ccp='claude --append-system-prompt "$(cat ~/.claude/auto-plan-mode.md)"'
 alias ccdanger='claude --dangerously-skip-permissions'
+alias cctrace='claude-trace --include-all-requests'
 
 # Load bash completion if available
 if [[ -f /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
