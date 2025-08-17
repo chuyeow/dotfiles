@@ -22,6 +22,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 # Other aliases
 alias k='kubectl'
 alias cc='claude'
+alias ccres='claude --resume'
 alias ccp='claude --append-system-prompt "$(cat ~/.claude/auto-plan-mode.md)"'
 alias ccdanger='claude --dangerously-skip-permissions'
 
@@ -52,3 +53,10 @@ shopt -s globstar 2>/dev/null
 
 # Make less more friendly for non-text input files
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Custom PS1 with directory and git branch
+function git_branch() {
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+export PS1='\[\033[34m\]\w\[\033[32m\]$(git_branch)\[\033[00m\] $ '
