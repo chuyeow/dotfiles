@@ -18,11 +18,7 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
-	# Get `delta` from https://github.com/dandavison/delta.
-	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended Bright'
-[interactive]
-	diffFilter = delta --color-only
+	editor = nvim
 [push]
 	default = simple
 [rerere]
