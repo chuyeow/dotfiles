@@ -1,6 +1,6 @@
 # ~/.bashrc
 
-# Environment Variables
+# Environment variables
 export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 
@@ -21,6 +21,10 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 
 # Replace ls with eza https://github.com/eza-community/eza
 alias ls='eza'
+
+# ssh identity management
+alias ssh-add-wego='ssh-add -D && ssh-add ~/.ssh/id_ed25519_github_wego'
+alias ssh-add-personal='ssh-add -D && ssh-add ~/.ssh/id_ed25519'
 
 # Other aliases
 alias k='kubectl'
