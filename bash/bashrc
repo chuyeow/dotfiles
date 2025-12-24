@@ -28,7 +28,7 @@ alias ssh-add-personal='ssh-add -D && ssh-add ~/.ssh/id_ed25519'
 
 # Other aliases
 alias k='kubectl'
-alias cc='claude'
+alias cc='claude --chrome'
 alias ccres='claude --resume'
 alias ccp='claude --append-system-prompt "$(cat ~/.claude/auto-plan-mode.md)"'
 alias ccdanger='claude --dangerously-skip-permissions'
