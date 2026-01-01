@@ -53,6 +53,8 @@ unbind %
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 
+# Tiled layout.
+bind T select-layout tiled
 
 # Number windows and panes from 1 instead of 0.
 set -g base-index 1
