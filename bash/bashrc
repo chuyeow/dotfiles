@@ -75,4 +75,9 @@ export PS1='\[\033[0;36m\]\w\[\033[0;33m\]$(git_branch)\[\033[0m\] $ '
 
 # nvm
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 2>/dev/null || true
+
+# zoxide
+eval "$(zoxide init bash)"
+
+# cargo
 . "$HOME/.cargo/env"
