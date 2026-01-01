@@ -1,6 +1,7 @@
 [user]
 	email = chuyeow@gmail.com
 	name = Cheah Chu Yeow
+	signingkey = /Users/chuyeow/.ssh/id_ed25519.pub
 [alias]
 	co = checkout
 	count = !git shortlog -sn
@@ -21,7 +22,15 @@
 	editor = nvim
 [push]
 	default = simple
+	autoSetupRemote = true
 [rerere]
 	enabled = true
 [init]
 	defaultBranch = main
+[gpg]
+	program = /opt/homebrew/bin/gpg
+	format = ssh
+[gpg "ssh"]
+	program = ssh-keygen
+[commit]
+	gpgsign = true
