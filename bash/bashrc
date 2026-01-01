@@ -5,7 +5,10 @@ export GOPATH=~/go
 export LC_ALL=en_US.UTF-8
 
 # PATH configuration
-export PATH="$GOPATH/bin:/usr/local/go/bin:~/.volta/bin:/opt/homebrew/bin:~/bin:$PATH"
+export PATH="$GOPATH/bin:/usr/local/go/bin:/opt/homebrew/bin:~/bin:$PATH"
+export PATH="/opt/homebrew/bin:~/bin:$PATH"
+export PATH="$HOME/.volta/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Git aliases
@@ -72,3 +75,4 @@ export PS1='\[\033[0;36m\]\w\[\033[0;33m\]$(git_branch)\[\033[0m\] $ '
 
 # nvm
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 2>/dev/null || true
+. "$HOME/.cargo/env"
