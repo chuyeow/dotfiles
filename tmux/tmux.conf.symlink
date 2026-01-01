@@ -15,7 +15,7 @@ set-option -g history-limit 10000
 set -g status-position bottom
 set -g status-style bg=colour235,fg=white
 set -g status-left-length 40
-set -g status-left "#[fg=green][#S] w#I #[fg=yellow]#{b:pane_current_path} #[fg=white]#{?client_prefix,`,} "
+set -g status-left "#[fg=green][#S] #[fg=white]#{?client_prefix,` ,}#[fg=yellow]#{b:pane_current_path} "
 set -g status-right "#[fg=white]%H:%M"
 
 # When there a multiple clients, a window is only constrained in size if a
