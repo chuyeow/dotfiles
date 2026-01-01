@@ -1,8 +1,5 @@
-set -g default-terminal "screen-256color"
-
-# Enable pbcopy/pbpaste in tmux.
-# Requires `brew install reattach-to-user-namespace`.
-set-option -g default-command "reattach-to-user-namespace -l fish"
+set -g default-terminal "tmux-256color"
+set -sa terminal-features ',*:RGB' # Enable TrueColor
 
 set -g mouse on
 
@@ -12,22 +9,24 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # Increase scrollback history.
-set-option -g history-limit 3000
+set-option -g history-limit 10000
 
 # Set status bar
-set -g status-bg black
-set -g status-fg white
-set -g status-left '#[fg=green]#'
+set -g status-position bottom
+set -g status-style bg=colour235,fg=white
+set -g status-left-length 40
+set -g status-left "#[fg=green][#S] w#I #[fg=yellow]#{b:pane_current_path} #[fg=white]#{?client_prefix,`,} "
+set -g status-right "#[fg=white]%H:%M"
 
 # When there a multiple clients, a window is only constrained in size if a
 # smaller client is actively looking at it.
 setw -g aggressive-resize on
 
 # Highlight active window.
-set-window-option -g window-status-current-style bg=blue
+set-window-option -g window-status-current-style bg=color13,fg=color255,bold
 
 # Highlight active pane.
-set-option -g pane-active-border-style fg=colour106
+set-option -g pane-active-border-style fg=colour13
 set-option -g pane-border-style fg=colour234
 
 # Remap prefix to `.
@@ -44,17 +43,20 @@ bind l select-pane -R
 # Resize panes.
 bind H resize-pane -L 10
 bind L resize-pane -R 10
-bind K resize-pane -D 5
-bind J resize-pane -U 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
 
-# Split windows.
+# Replace default split window bindings.
 unbind %
-bind | split-window -h
-bind - split-window -v
+unbind ""
+# Make splits inherit current working directory
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
 
 # Number windows and panes from 1 instead of 0.
 set -g base-index 1
-set-window-option -g pane-base-index 1
+set -g pane-base-index 1
 
 # Move to next window with Tab.
 bind Tab next-window
@@ -62,13 +64,32 @@ bind Tab next-window
 # Pane manipulation.
 bind C-w kill-pane
 
+# Don't exit from tmux when closing a session.
+set -g detach-on-destroy off
+
 # Use Vim keybindings in copy mode.
 setw -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim.
 bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
 
 # Update default binding of `Enter` to also use copy-pipe.
 unbind -T copy-mode-vi Enter
-bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+
+if-shell '[ -f ~/code/tmux-resurrect/resurrect.tmux ]' \
+  'run-shell ~/code/tmux-resurrect/resurrect.tmux'
+
+# tmux-named-snapshot
+# Save/restore tmux-resurrect session with a name.
+if-shell '[ -f ~/code/tmux-named-snapshot/named-snapshot.tmux ]' \
+  'run-shell ~/code/tmux-named-snapshot/named-snapshot.tmux'
+set -g @named-snapshot-save 'C-m:manual M:*'
+set -g @named-snapshot-restore 'C-n:manual N:*'
+
+# tmux-continuum
+# Saves tmux-resurrect data every 15m.
+if-shell '[ -f ~/code/tmux-continuum/continuum.tmux ]' \
+  'run-shell ~/code/tmux-continuum/continuum.tmux'
+set -g @continuum-restore 'on'
