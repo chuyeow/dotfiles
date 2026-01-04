@@ -95,3 +95,9 @@ set -g @named-snapshot-restore 'C-n:manual N:*'
 if-shell '[ -f ~/code/tmux-continuum/continuum.tmux ]' \
   'run-shell ~/code/tmux-continuum/continuum.tmux'
 set -g @continuum-restore 'on'
+
+# Pick a sesh session from a modal dialog.
+bind-key "K" display-popup -E -w 40% "sesh connect \"$(
+ sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt='⚡'
+)\""
+
