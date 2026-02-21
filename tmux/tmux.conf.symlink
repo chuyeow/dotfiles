@@ -66,9 +66,6 @@ bind Tab next-window
 # Pane manipulation.
 bind C-w kill-pane
 
-# Don't exit from tmux when closing a session.
-set -g detach-on-destroy off
-
 # Use Vim keybindings in copy mode.
 setw -g mode-keys vi
 
