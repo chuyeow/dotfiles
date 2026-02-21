@@ -27,8 +27,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias ls='eza'
 
 # ssh identity management
-alias ssh-add-wego='ssh-add -D && ssh-add ~/.ssh/id_ed25519_github_wego'
-alias ssh-add-personal='ssh-add -D && ssh-add ~/.ssh/id_ed25519'
+alias ssh-add-wego='ssh-add -d ~/.ssh/id_ed25519_github_wego 2>/dev/null || true; ssh-add ~/.ssh/id_ed25519_github_wego'
+alias ssh-add-personal='ssh-add -d ~/.ssh/id_ed25519 2>/dev/null || true; ssh-add ~/.ssh/id_ed25519'
 
 # Other aliases
 alias k='kubectl'
@@ -42,7 +42,7 @@ alias cctrace='claude-trace --include-all-requests'
 if [[ -f /opt/homebrew/etc/profile.d/bash_completion.sh ]]; then
     source /opt/homebrew/etc/profile.d/bash_completion.sh
 elif [[ -f /usr/local/etc/profile.d/bash_completion.sh ]]; then
-    source /usr/local/etc/profile   .d/bash_completion.sh
+    source /usr/local/etc/profile.d/bash_completion.sh
 elif [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
@@ -81,4 +81,4 @@ export PS1='\[\033[0;36m\]\w\[\033[0;33m\]$(git_branch)\[\033[0m\] $ '
 eval "$(zoxide init bash)"
 
 # cargo
-. "$HOME/.cargo/env"
+[[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
