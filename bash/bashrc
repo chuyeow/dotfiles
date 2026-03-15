@@ -78,18 +78,8 @@ shopt -s globstar 2>/dev/null
 # Make less more friendly for non-text input files
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Git branch function for PS1
-git_branch() {
-    local branch
-    if branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null)"; then
-        printf '(%s)' "$branch"
-    else
-        branch="$(git rev-parse --short --verify HEAD 2>/dev/null)" && printf '(detached:%s)' "$branch"
-    fi
-}
-
-# Custom PS1 with current directory and git branch
-export PS1='\[\033[0;36m\]\w\[\033[0;33m\]$(git_branch)\[\033[0m\] $ '
+# Starship prompt
+eval "$(starship init bash)"
 
 # nvm
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 2>/dev/null || true
