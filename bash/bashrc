@@ -94,7 +94,17 @@ export PS1='\[\033[0;36m\]\w\[\033[0;33m\]$(git_branch)\[\033[0m\] $ '
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 2>/dev/null || true
 
 # zoxide
+_prompt_command_sanitize() {
+    [[ -z ${PROMPT_COMMAND:-} ]] && return
+    PROMPT_COMMAND="${PROMPT_COMMAND#;}"
+    while [[ "$PROMPT_COMMAND" == *";;"* ]]; do
+        PROMPT_COMMAND="${PROMPT_COMMAND/;;/;}"
+    done
+    PROMPT_COMMAND="${PROMPT_COMMAND%;}"
+}
+
 eval "$(zoxide init bash)"
+_prompt_command_sanitize
 
 # cargo
 [[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
