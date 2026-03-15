@@ -30,8 +30,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias ls='eza'
 
 # ssh identity management
-alias ssh-add-wego='ssh-add -d ~/.ssh/id_ed25519_github_wego 2>/dev/null || true; ssh-add ~/.ssh/id_ed25519_github_wego'
-alias ssh-add-personal='ssh-add -d ~/.ssh/id_ed25519 2>/dev/null || true; ssh-add ~/.ssh/id_ed25519'
+alias ssh-add-wego='ssh-add -D; ssh-add ~/.ssh/id_ed25519_github_wego'
+alias ssh-add-personal='ssh-add -D; ssh-add ~/.ssh/id_ed25519'
 
 # Other aliases
 alias k='kubectl'
