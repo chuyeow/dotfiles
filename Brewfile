@@ -77,7 +77,7 @@ brew "ffmpeg"
 brew "imagemagick"
 brew "portaudio"
 brew "asciinema"
-brew "youtube-dl"
+brew "yt-dlp"                    # youtube-dl (maintained fork)
 
 # Git & Dev Utilities
 brew "biome"
