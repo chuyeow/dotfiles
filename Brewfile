@@ -1,5 +1,7 @@
 # Taps
 tap "datadog-labs/pack"
+tap "entireio/tap"
+tap "felixkratz/formulae"
 tap "oven-sh/bun"
 tap "stakpak/stakpak"
 tap "steipete/tap"
@@ -22,17 +24,22 @@ brew "eza"                     # ls
 brew "bat"                     # cat
 brew "git-delta"               # git diff
 brew "ripgrep"                 # grep (used by neovim Telescope)
+brew "fd"                      # find
 brew "fzf"                     # fuzzy finder
 brew "zoxide"                  # cd
 brew "mcfly"                   # shell history search
 brew "yazi"                    # file manager
 brew "trash-cli"               # safe rm
+brew "television"              # fuzzy finder TUI
+brew "z"                       # directory frecency
 
 # Terminal UIs
 brew "lazygit"
 brew "lazydocker"
 brew "btop"                    # system monitor
+brew "circumflex"              # Hacker News TUI
 brew "dive"                    # docker image explorer
+brew "gdu"                     # disk usage analyzer
 
 # Shell & Prompt
 brew "starship"                # cross-shell prompt
@@ -47,6 +54,7 @@ brew "uv"                      # Python package manager
 # AI Tools
 brew "ollama"
 brew "llm"
+brew "llmfit"
 brew "opencode"
 
 # DevOps & Infra
@@ -73,6 +81,10 @@ brew "youtube-dl"
 
 # Git & Dev Utilities
 brew "biome"
+brew "fastfetch"               # system info
+brew "tree"
+brew "whosthere"               # SSH server fingerprinting
+brew "xcodegen"
 brew "zellij"                  # terminal multiplexer
 brew "magic-wormhole"          # file transfer
 
