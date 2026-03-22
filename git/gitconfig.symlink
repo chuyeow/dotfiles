@@ -1,7 +1,10 @@
-[user]
-	email = chuyeow@gmail.com
-	name = Cheah Chu Yeow
-	signingkey = /Users/chuyeow/.ssh/id_ed25519.pub
+[include]
+	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/code/wego/"]
+	path = ~/.gitconfig-wego
+[includeIf "gitdir:~/code/wego-*/"]
+	path = ~/.gitconfig-wego
+[alias]
 [alias]
 	co = checkout
 	count = !git shortlog -sn
