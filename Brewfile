@@ -95,7 +95,6 @@ brew "steipete/tap/gogcli"
 
 # macOS Casks
 if OS.mac?
-  cask "claude-code"
   cask "codex"
   cask "entireio/tap/entire"
 end
