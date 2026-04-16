@@ -97,4 +97,5 @@ brew "steipete/tap/gogcli"
 if OS.mac?
   cask "codex"
   cask "entireio/tap/entire"
+  cask "trimmy"
 end
