@@ -102,3 +102,14 @@ eval "$(mcfly init bash)"
 
 # cargo
 [[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+
+# cmux stomps PROMPT_COMMAND post-bashrc; chain starship into its hook on first prompt
+_patch_cmux_starship() {
+    declare -f _cmux_prompt_command >/dev/null 2>&1 || return
+    [[ $(declare -f _cmux_prompt_command) == *starship_precmd* ]] && return
+    eval "$(declare -f _cmux_prompt_command | sed '1s/.*/_cmux_prompt_command_orig()/')"
+    _cmux_prompt_command() { _cmux_prompt_command_orig; starship_precmd; }
+}
+_prev_debug_trap=$(trap -p DEBUG | sed -E "s/^trap -- '(.*)' DEBUG$/\1/")
+trap "${_prev_debug_trap:+$_prev_debug_trap; }_patch_cmux_starship" DEBUG
+unset _prev_debug_trap
