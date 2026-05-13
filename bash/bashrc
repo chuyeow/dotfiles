@@ -84,19 +84,6 @@ eval "$(starship init bash)"
 # nvm
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 2>/dev/null || true
 
-# zoxide
-_prompt_command_sanitize() {
-    [[ -z ${PROMPT_COMMAND:-} ]] && return
-    PROMPT_COMMAND="${PROMPT_COMMAND#;}"
-    while [[ "$PROMPT_COMMAND" == *";;"* ]]; do
-        PROMPT_COMMAND="${PROMPT_COMMAND/;;/;}"
-    done
-    PROMPT_COMMAND="${PROMPT_COMMAND%;}"
-}
-
-eval "$(zoxide init bash)"
-_prompt_command_sanitize
-
 # mcfly (upgraded ctrl-r shell history)
 eval "$(mcfly init bash)"
 
@@ -113,3 +100,16 @@ _patch_cmux_starship() {
 _prev_debug_trap=$(trap -p DEBUG | sed -E "s/^trap -- '(.*)' DEBUG$/\1/")
 trap "${_prev_debug_trap:+$_prev_debug_trap; }_patch_cmux_starship" DEBUG
 unset _prev_debug_trap
+
+# zoxide — must be initialized last (warns if PROMPT_COMMAND mutated after)
+_prompt_command_sanitize() {
+    [[ -z ${PROMPT_COMMAND:-} ]] && return
+    PROMPT_COMMAND="${PROMPT_COMMAND#;}"
+    while [[ "$PROMPT_COMMAND" == *";;"* ]]; do
+        PROMPT_COMMAND="${PROMPT_COMMAND/;;/;}"
+    done
+    PROMPT_COMMAND="${PROMPT_COMMAND%;}"
+}
+
+eval "$(zoxide init bash)"
+_prompt_command_sanitize
