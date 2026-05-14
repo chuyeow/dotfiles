@@ -21,7 +21,16 @@ alias gcv='git commit -v'
 alias gpr='git pull --rebase'
 alias gp='git push'
 alias gb='git branch'
-alias gcm='git checkout main'
+gcm() {
+    if git show-ref --verify --quiet refs/heads/main; then
+        git checkout main
+    elif git show-ref --verify --quiet refs/heads/master; then
+        git checkout master
+    else
+        echo "gcm: no main or master branch found" >&2
+        return 1
+    fi
+}
 alias gco='git checkout'
 alias gst='git status --branch'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
