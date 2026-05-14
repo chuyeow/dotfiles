@@ -99,15 +99,23 @@ eval "$(mcfly init bash)"
 # cargo
 [[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-# cmux stomps PROMPT_COMMAND post-bashrc; chain starship into its hook on first prompt
-_patch_cmux_starship() {
+# cmux stomps PROMPT_COMMAND post-bashrc; chain prompt hooks (mcfly history,
+# zoxide cd tracking, starship) into its hook on first prompt. Preserve $? across
+# the chain so each hook sees the user command's exit status, not the previous hook's.
+_patch_cmux_prompt_hooks() {
     declare -f _cmux_prompt_command >/dev/null 2>&1 || return
     [[ $(declare -f _cmux_prompt_command) == *starship_precmd* ]] && return
     eval "$(declare -f _cmux_prompt_command | sed '1s/.*/_cmux_prompt_command_orig()/')"
-    _cmux_prompt_command() { _cmux_prompt_command_orig; starship_precmd; }
+    _cmux_prompt_command() {
+        local __exit=$?
+        _cmux_prompt_command_orig
+        ( exit "$__exit" ); declare -f mcfly_prompt_command >/dev/null 2>&1 && mcfly_prompt_command
+        ( exit "$__exit" ); declare -f __zoxide_hook       >/dev/null 2>&1 && __zoxide_hook
+        ( exit "$__exit" ); starship_precmd
+    }
 }
 _prev_debug_trap=$(trap -p DEBUG | sed -E "s/^trap -- '(.*)' DEBUG$/\1/")
-trap "${_prev_debug_trap:+$_prev_debug_trap; }_patch_cmux_starship" DEBUG
+trap "${_prev_debug_trap:+$_prev_debug_trap; }_patch_cmux_prompt_hooks" DEBUG
 unset _prev_debug_trap
 
 # zoxide — must be initialized last (warns if PROMPT_COMMAND mutated after)
