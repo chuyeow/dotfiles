@@ -99,34 +99,11 @@ eval "$(mcfly init bash)"
 # cargo
 [[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-# cmux stomps PROMPT_COMMAND post-bashrc; chain prompt hooks (mcfly history,
-# zoxide cd tracking, starship) into its hook on first prompt. Preserve $? across
-# the chain so each hook sees the user command's exit status, not the previous hook's.
-_patch_cmux_prompt_hooks() {
-    declare -f _cmux_prompt_command >/dev/null 2>&1 || return
-    [[ $(declare -f _cmux_prompt_command) == *starship_precmd* ]] && return
-    eval "$(declare -f _cmux_prompt_command | sed '1s/.*/_cmux_prompt_command_orig()/')"
-    _cmux_prompt_command() {
-        local __exit=$?
-        _cmux_prompt_command_orig
-        ( exit "$__exit" ); declare -f mcfly_prompt_command >/dev/null 2>&1 && mcfly_prompt_command
-        ( exit "$__exit" ); declare -f __zoxide_hook       >/dev/null 2>&1 && __zoxide_hook
-        ( exit "$__exit" ); starship_precmd
-    }
-}
-_prev_debug_trap=$(trap -p DEBUG | sed -E "s/^trap -- '(.*)' DEBUG$/\1/")
-trap "${_prev_debug_trap:+$_prev_debug_trap; }_patch_cmux_prompt_hooks" DEBUG
-unset _prev_debug_trap
+# Source Wego Maven credentials
+[ -f ~/.maven.profile ] && source ~/.maven.profile
 
-# zoxide — must be initialized last (warns if PROMPT_COMMAND mutated after)
-_prompt_command_sanitize() {
-    [[ -z ${PROMPT_COMMAND:-} ]] && return
-    PROMPT_COMMAND="${PROMPT_COMMAND#;}"
-    while [[ "$PROMPT_COMMAND" == *";;"* ]]; do
-        PROMPT_COMMAND="${PROMPT_COMMAND/;;/;}"
-    done
-    PROMPT_COMMAND="${PROMPT_COMMAND%;}"
-}
+# Alias for updating Maven credentials
+alias maven_creds_update='/Users/chuyeow/code/wego/spaghetti/codes/DevEnvTools/maven_credentials_manager/update_maven_creds.sh'
 
+# zoxide — must be initialized last
 eval "$(zoxide init bash)"
-_prompt_command_sanitize
