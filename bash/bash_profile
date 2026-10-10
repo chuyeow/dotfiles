@@ -22,7 +22,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Terminal settings
-export TERM=xterm-256color
 
 # Editor preferences
 export EDITOR=vim
