@@ -106,5 +106,7 @@ eval "$(mcfly init bash)"
 # Alias for updating Maven credentials
 alias maven_creds_update='/Users/chuyeow/code/wego/spaghetti/codes/DevEnvTools/maven_credentials_manager/update_maven_creds.sh'
 
+eval "$(mise activate bash)"
+
 # zoxide — must be initialized last
 eval "$(zoxide init bash)"
